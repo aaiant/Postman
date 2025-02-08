@@ -1,0 +1,480 @@
+{
+	"info": {
+		"_postman_id": "9a17caf2-b33b-4d3b-8c93-95ef5e953703",
+		"name": "FakeAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41531481"
+	},
+	"item": [
+		{
+			"name": "Activities",
+			"item": [
+				{
+					"name": "Get a single activity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Activities/:activityID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Activities",
+								":activityID"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							],
+							"variable": [
+								{
+									"key": "activityID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all activities",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Activities/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Activities",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an activity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Activities/:activityID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Activities",
+								":activityID"
+							],
+							"variable": [
+								{
+									"key": "activityID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an activity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 2,\n  \"title\": \"Activity 2 NEW\",\n  \"dueDate\": \"2025-02-08T12:36:41.679Z\",\n  \"completed\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/Activities/:activityID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Activities",
+								":activityID"
+							],
+							"variable": [
+								{
+									"key": "activityID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create and activity",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": 31,\n  \"title\": \"Activity 31\",\n  \"dueDate\": \"2025-02-08T12:40:09.309Z\",\n  \"completed\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/Activities",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Activities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authors",
+			"item": [
+				{
+					"name": "Get all authors",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Authors",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single author",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Authors/:authorID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Authors",
+								":authorID"
+							],
+							"variable": [
+								{
+									"key": "authorID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a book from authors",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Authors/authors/books/:bookID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Authors",
+								"authors",
+								"books",
+								":bookID"
+							],
+							"variable": [
+								{
+									"key": "bookID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create an author",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idBook\": 1,\n  \"firstName\": \"ANT\",\n  \"lastName\": \"Andy\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/Authors/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Authors",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an author",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/Authors/:authorID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Authors",
+								":authorID"
+							],
+							"variable": [
+								{
+									"key": "authorID",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an author",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"idBook\": 2,\n        \"firstName\": \"ANT 3\",\n        \"lastName\": \"ANDY 3\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/Authors/:authorID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"Authors",
+								":authorID"
+							],
+							"variable": [
+								{
+									"key": "authorID",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CoverPhotos",
+			"item": [
+				{
+					"name": "Get all cover photos",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/CoverPhotos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"CoverPhotos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single cover photo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/CoverPhotos/:coverPhotoID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"CoverPhotos",
+								":coverPhotoID"
+							],
+							"variable": [
+								{
+									"key": "coverPhotoID",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single book",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/CoverPhotos/books/covers/:bookID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"CoverPhotos",
+								"books",
+								"covers",
+								":bookID"
+							],
+							"variable": [
+								{
+									"key": "bookID",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a cover photo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/CoverPhotos/:coverPhotoID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"CoverPhotos",
+								":coverPhotoID"
+							],
+							"variable": [
+								{
+									"key": "coverPhotoID",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a cover photo",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"idBook\": 3,\n  \"url\": \"https://placeholdit.imgix.net/~text?txtsize=33&txt=Book 1&w=250&h=350\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/CoverPhotos",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"CoverPhotos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
