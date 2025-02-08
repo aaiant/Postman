@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "35ebdfcc-601d-4b66-8190-8a968be10679",
+		"name": "Cars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41531481"
+	},
+	"item": [
+		{
+			"name": "CRUD",
+			"item": [
+				{
+					"name": "Get all cars",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ro",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cars",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single car",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/:carId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								":carId"
+							],
+							"variable": [
+								{
+									"key": "carId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all repairs",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/:carId/repairs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								":carId",
+								"repairs"
+							],
+							"variable": [
+								{
+									"key": "carId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get repair for a car",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/:carId/repairs/:repairdId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								":carId",
+								"repairs",
+								":repairdId"
+							],
+							"variable": [
+								{
+									"key": "carId",
+									"value": "1"
+								},
+								{
+									"key": "repairdId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a car v0",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"build\": 2019,\n  \"id\": 0,\n  \"manufacturer\": \"Toyota\",\n  \"model\": \"Tacoma\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cars",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a car v1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"build\": 2018,\n  \"manufacturer\": \"Toyota\",\n  \"model\": \"Camry\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cars",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Crete a repair for a car v0",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"carId\": 4,\n  \"description\": \"Oil change\",\n  \"repair_date\": \"2019-12-15\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cars/repairs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								"repairs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a repair for a car v1",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"Tyre change\",\n  \"repair_date\": \"2019-12-16\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cars/:carId/repairs",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								":carId",
+								"repairs"
+							],
+							"variable": [
+								{
+									"key": "carId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a car",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "ro",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 3,\n    \"manufacturer\": \"Tesla\",\n    \"model\": \"Cybertruck\",\n    \"build\": 2020\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/cars",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a car v0",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/cars/:carId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"cars",
+								":carId"
+							],
+							"variable": [
+								{
+									"key": "carId",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creating some info",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"John\",\n    \"age\": 29,\n    \"hobbies\": [\"Netflix\", \"mountain biking\"],\n    \"contactDetails\": {\n        \"phone\": \"(123) 456-7890\",\n        \"email\": \"john@example.com\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "httpbin.org/anything",
+							"host": [
+								"httpbin",
+								"org"
+							],
+							"path": [
+								"anything"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
